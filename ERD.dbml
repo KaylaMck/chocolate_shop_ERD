@@ -10,8 +10,8 @@ Table customers {
     id int [pk]
     first_name varchar
     last_name varchar
-    email varchar
-    is_subscribed boolean
+    email varchar [unique]
+    is_subscribed boolean 
 }
 
 Table orders {
@@ -21,7 +21,7 @@ Table orders {
     order_date datetime
     total_amount decimal
     order_type varchar
-    status varchar
+    stripe_payment_id varchar [unique]
 }
 
 Table order_items {
