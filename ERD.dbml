@@ -1,0 +1,42 @@
+Table products {
+    id int [pk]
+    name varchar
+    description text
+    price decimal
+    stock_quantity int
+}
+
+Table customers {
+    id int [pk]
+    first_name varchar
+    last_name varchar
+    email varchar
+    is_subscribed boolean
+}
+
+Table orders {
+    id int [pk]
+    customer_id int [ref: > customers.id]
+    employee_id int [ref: > employees.id]
+    order_date datetime
+    total_amount decimal
+    order_type varchar
+    status varchar
+}
+
+Table order_items {
+    id int [pk]
+    order_id int [ref: > orders.id]
+    product_id int [ref: > products.id]
+    quantity int
+    unit_price decimal
+    sub_total decimal
+}
+
+Table employees {
+    id int [pk]
+    first_name varchar
+    last_name varchar
+    is_manager boolean
+    pay_rate decimal
+}
