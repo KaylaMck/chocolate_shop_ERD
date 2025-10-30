@@ -1,6 +1,6 @@
 Table products {
     id int [pk]
-    name varchar
+    name varchar [not null]
     description text
     price decimal
     stock_quantity int
@@ -8,8 +8,8 @@ Table products {
 
 Table customers {
     id int [pk]
-    first_name varchar
-    last_name varchar
+    first_name varchar [not null]
+    last_name varchar [not null]
     email varchar [unique]
     is_subscribed boolean 
 }
@@ -35,8 +35,8 @@ Table order_items {
 
 Table employees {
     id int [pk]
-    first_name varchar
-    last_name varchar
+    first_name varchar [not null]
+    last_name varchar [not null]
     is_manager boolean
     pay_rate decimal
 }
